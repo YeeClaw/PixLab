@@ -122,6 +122,34 @@ public class Picture extends SimplePicture {
 		}
 	}
 
+	public void grayscale() {
+
+		Pixel[][] pixels = this.getPixels2D();
+		for (Pixel[] rowArray : pixels) {
+			for (Pixel pixelObj : rowArray) {
+				int average = (pixelObj.getBlue() + pixelObj.getRed() + pixelObj.getGreen()) / 3;
+
+				pixelObj.setBlue(average);
+				pixelObj.setGreen(average);
+				pixelObj.setRed(average);
+			}
+		}
+	}
+
+	public void fixUnderwater() {
+
+		Pixel[][] pixels = this.getPixels2D();
+		for (Pixel[] rowArray : pixels) {
+			for (Pixel pixelObj : rowArray) {
+
+				if (pixelObj.getRed() <= 22) {
+					pixelObj.setBlue(255);
+					pixelObj.setGreen(255);
+				}
+			}
+		}
+	}
+
 	/**
 	 * Method that mirrors the picture around a vertical mirror in the center of
 	 * the picture from left to right

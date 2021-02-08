@@ -8,6 +8,18 @@
  */
 public class PictureTester
 {
+  public static void testExplore() {
+    Picture water = new Picture("water.jpg");
+    water.explore();
+  }
+
+  public static void testFixUnderwater() {
+    Picture water = new Picture("water.jpg");
+    water.explore();
+    water.fixUnderwater();
+    water.explore();
+  }
+
   /** Method to test zeroBlue */
   public static void testZeroBlue()
   {
@@ -29,6 +41,13 @@ public class PictureTester
     Picture beach = new Picture("beach.jpg");
     beach.explore();
     beach.negate();
+    beach.explore();
+  }
+
+  public static void testGrayscale() {
+    Picture beach = new Picture("beach.jpg");
+    beach.explore();
+    beach.grayscale();
     beach.explore();
   }
 
@@ -73,11 +92,12 @@ public class PictureTester
     // uncomment a call here to run a test
     // and comment out the ones you don't want
     // to run
+    //testExplore();
     //testZeroBlue();
     //testKeepOnlyBlue();
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
-    testNegate();
+    //testNegate();
     //testGrayscale();
     //testFixUnderwater();
     //testMirrorVertical();
