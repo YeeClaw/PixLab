@@ -27,6 +27,13 @@ public class IntArrayWorker {
 		return total;
 	}
 
+	public int getCount(int searchedInt) {
+
+		getTotalNested();
+
+		return null;
+	}
+
 	/**
 	 * Method to return the total using a nested for-each loop
 	 * 
