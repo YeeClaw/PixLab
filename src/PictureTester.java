@@ -27,6 +27,13 @@ public class PictureTester
     picture.explore();
   }
 
+  public static void testMirrorHorizontalBotToTop() {
+    Picture picture = new Picture("CumberlandIsland.jpg");
+    picture.explore();
+    picture.mirrorHorizontalBotToTop();
+    picture.explore();
+  }
+
   public static void testFixUnderwater() {
     Picture water = new Picture("water.jpg");
     water.explore();
@@ -115,7 +122,8 @@ public class PictureTester
     //testGrayscale();
     //testFixUnderwater();
     //testMirrorVerticalRightToLeft();
-    testMirrorHorizontal();
+    //testMirrorHorizontal();
+    //testMirrorHorizontalBotToTop();
     //testMirrorVertical();
     //testMirrorTemple();
     //testMirrorArms();
