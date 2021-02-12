@@ -27,6 +27,17 @@ public class IntArrayWorker {
 		return total;
 	}
 
+	public int getCount(int searchedInt) {
+
+		for (int[] rowArray : matrix) {
+			for (int item : rowArray) {
+				if 
+			}
+		}
+
+		return null;
+	}
+
 	/**
 	 * Method to return the total using a nested for-each loop
 	 * 
