@@ -22,6 +22,12 @@ public class PictureTester
     picture.explore();
   }
 
+  public static void testMyCollage() {
+    Picture canvas = new Picture("640x480.jpg");
+    canvas.explore();
+    canvas.myCollage();
+  }
+
   public static void testMirrorHorizontal() {
     Picture picture = new Picture("CumberlandIsland.jpg");
     picture.explore();
@@ -143,8 +149,9 @@ public class PictureTester
     //testMirrorVertical();
     //testMirrorTemple();
     //testMirrorArms();
-    testMirrorGull();
+    //testMirrorGull();
     //testMirrorDiagonal();
+    testMyCollage();
     //testCollage();
     //testCopy();
     //testEdgeDetection();

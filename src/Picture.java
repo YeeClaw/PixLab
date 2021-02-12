@@ -316,6 +316,53 @@ public class Picture extends SimplePicture {
 		this.write("collage.jpg");
 	}
 
+	public void copy(Picture fromPic, int leftRow, int rightRow, int leftCol, int rightCol, int startRow, int startCol) {
+
+		Pixel fromPixel = null;
+		Pixel toPixel = null;
+		Pixel[][] toPixels = this.getPixels2D();
+		Pixel[][] fromPixels = fromPic.getPixels2D();
+
+		for (int fromRow = leftRow, toRow = startRow; fromRow < rightRow
+				&& toRow < toPixels.length; fromRow++, toRow++) {
+				
+			for (int fromCol = leftCol, toCol = startCol; fromCol < rightCol
+					&& toCol < toPixels[0].length; fromCol++, toCol++) {
+					
+				fromPixel = fromPixels[fromRow][fromCol];
+				toPixel = toPixels[toRow][toCol];
+				toPixel.setColor(fromPixel.getColor());
+			}
+		}
+	}
+
+	public void myCollage() {
+		Picture beach = new Picture("catcry.jpg");
+		Picture snowman = new Picture("butterfly.jpg");
+		Picture snowmanNegative = new Picture("arch.jpg");
+		Picture snowmanGrayscale = new Picture("butterfly.jpg");
+		snowmanNegative.negate();
+		snowmanGrayscale.grayscale();
+
+		int vertOffset = 100;
+
+		this.copy(beach, 0, 0);
+
+		this.copy(snowman, 70, 129, 165, 245, 26 + vertOffset, 180);
+		this.copy(snowmanNegative, 129, 140, 165, 245, 86 + vertOffset, 180);
+		this.copy(snowmanGrayscale, 140, 300, 165, 245, 98 + vertOffset, 180);
+
+		this.copy(snowmanNegative, 70, 129, 165, 245, 26 + vertOffset, 260);
+		this.copy(snowmanGrayscale, 129, 140, 165, 245, 86 + vertOffset, 260);
+		this.copy(snowmanNegative, 140, 300, 165, 245, 98 + vertOffset, 260);
+
+		this.mirrorVertical();
+
+
+		this.write("collage.jpg");
+	}
+
+
 	/**
 	 * Method to show large changes in color
 	 * 
