@@ -1,3 +1,5 @@
+import javax.swing.text.PasswordView;
+
 /**
  * This class contains class (static) methods
  * that will help you test the Picture class 
@@ -9,7 +11,7 @@
 public class PictureTester
 {
   public static void testExplore() {
-    Picture water = new Picture("water.jpg");
+    Picture water = new Picture("seagull.jpg");
     water.explore();
   }
 
@@ -34,6 +36,13 @@ public class PictureTester
     picture.explore();
   }
 
+  public static void testMirrorArms() {
+    Picture picture = new Picture("snowman.jpg");
+    picture.explore();
+    picture.mirrorArms();
+    picture.explore();
+  }
+
   public static void testFixUnderwater() {
     Picture water = new Picture("water.jpg");
     water.explore();
@@ -41,12 +50,19 @@ public class PictureTester
     water.explore();
   }
 
+  public static void testMirrorGull() {
+    Picture picture = new Picture("seagull.jpg");
+    picture.explore();
+    picture.mirrorGull();
+    picture.explore();
+  }
+
   /** Method to test zeroBlue */
   public static void testZeroBlue()
   {
-    Picture beach = new Picture("beach.jpg");
+    Picture beach = new Picture("seagull.jpg");
     beach.explore();
-    beach.zeroBlue();
+    beach.mirrorGull();
     beach.explore();
   }
   
@@ -127,7 +143,7 @@ public class PictureTester
     //testMirrorVertical();
     //testMirrorTemple();
     //testMirrorArms();
-    //testMirrorGull();
+    testMirrorGull();
     //testMirrorDiagonal();
     //testCollage();
     //testCopy();
